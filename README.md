@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Expenses Chart Component Solution](https://github.com/MoeHtetMyint99/expenses-chart-component)
+- Live Site URL: [Expenses Chart Component live site URL](https://moehtetmyint99.github.io/expenses-chart-component/)
 
 ## My process
 
