@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+/* font-family: 'DM Sans', sans-serif; */
+
+:root{
+    --font-DM-Sans: 'DM Sans', sans-serif;
+    --Soft-red: hsl(10, 79%, 65%);
+    --Soft-red-plain: 10, 79%, 65%;
+    --Cyan: hsl(186, 34%, 60%);
+    --Cyan-plain: 186, 34%, 60%;
+    --Dark-brown: hsl(25, 47%, 15%);
+    --Medium-brown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --Very-pale-orange: hsl(33, 100%, 98%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
+::before, ::after{
+    box-sizing: border-box;
+}
+img{
+    display: block;
+    width: 100%;
+}
+html{
+    font-size: 18px;
+}
+body{
+    width: 100%;
+    min-height: 100vh;
+    font-size: 18px;
+    font-family: var(--font-DM-Sans);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--Cream);
+    color: var(--Dark-brown);
+}
+.main-box{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    max-width: 568px;
+    max-height: 100vh;
+    padding: 30px 18px;
+}
+/* my-balance-card start */
+.my-balance-card{
+    width: 100%;
+    height: 100vh;
+    max-height: 130px;
+    padding: 20px 25px;
+    background: var(--Soft-red);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 20px;
+}
+.my-balance-card .balance{
+    font-size: 1rem;
+    color: var(--Very-pale-orange);
+    color: hsl(0, 0%, 90%);
+}
+.balance span{
+    display: block;
+    font-size: 1.8rem;
+    line-height: 30px;
+    color: white;
+    margin-top: 10px;
+}
+.my-balance-card .logo{
+    width: 3.75rem;
+}
+/* my-balance-card end */
+/* charts-card start */
+.charts-card{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    max-height: 520px;
+    background: white;
+    padding: 30px 30px 20px 30px;
+    display: grid;
+    grid-template-rows: max-content 1fr 140px;
+    border-radius: 20px;
+}
+.charts-card .chart-header{
+    font-size: 1.85rem;  
+    font-weight: 700;  
+    letter-spacing: -0.5px;
+    margin-bottom: 20px;
+}
+.charts-card .charts-box{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    margin-top: auto;
+    margin-bottom: 70px;
+}
+.charts-box .chart{
+    position: relative;
+    width: 100%;
+    height: 150px;
+}
+.charts-box .chart-figure{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    background: var(--Soft-red);
+    border-radius: 5px 5px 0 0;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+.charts-box .chart-figure:hover{
+    background: hsla(var(--Soft-red-plain), 0.8);
+}
+.chart-figure:hover .chart-number{
+    opacity: 1;
+}
+.chart-figure.current{
+    background: var(--Cyan);
+}
+.chart-figure.current:hover{
+    background: hsla(var(--Cyan-plain), 0.8);
+}
+.chart .chart-day{
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    font-size: 0.9rem;
+    transform: translate(-50%, 0);
+}
+.chart .chart-number{
+    position: absolute;
+    bottom: calc(100% + 5px);
+    left: 50%;
+    transform: translate(-50%, 0);
+    background: black;
+    color: white;
+    padding: 10px 7px;
+    border-radius: 5px;
+    overflow: hidden;
+    font-size: 0.9rem;
+    opacity: 0;
+    transition: all 0.3s ease ;
+}
+/* charts-card end */
+/* month-total start */
+.month-total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top: 3px solid var(--Cream);
+}
+.month-total .container{
+    width: 100%;
+}
+.month-total .total-header{
+    color: var(--Medium-brown);
+}
+.month-total .total-content{
+    display: flex;
+    justify-content: space-between;
+}
+.total-content .value{
+    font-size: 2.5rem;
+    font-weight: 900;
+}
+.total-content .right-text{
+    text-align: right;
+    font-weight: 900;
+}
+.right-text span{
+    display: block;
+    color: var(--Medium-brown);
+    font-weight: 400;
+}
+/* month-total end */
+@media (max-width: 1400px){
+    .charts-card{
+        grid-template-rows: max-content 1fr 100px;
+    }
+    .charts-card .charts-box{
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 700px){
+    .my-balance-card{
+        padding: 0 20px;
+        max-height: 100px;
+    }
+    html{
+        font-size: 14px;
+    }
+    .my-balance-card .logo{
+        width: 60px;
+    }
+    .charts-card{
+        padding: 20px 20px;
+        height: 420px;
+    }
+    .chart .chart-number{
+        padding: 5px 3px;
+        font-size: 0.8rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
